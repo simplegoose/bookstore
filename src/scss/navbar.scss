@@ -1,0 +1,22 @@
+@import 'colors';
+@import 'mixins/flex';
+
+.navbar {
+  ul {
+    @include flex(row, 4rem, center);
+
+    list-style: none;
+    font-size: 0.9rem;
+
+    li {
+      a {
+        color: $pinkish-grey;
+        text-decoration: none;
+      }
+
+      a.active {
+        color: $black-two;
+      }
+    }
+  }
+}
