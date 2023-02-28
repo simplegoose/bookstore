@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { removeBook } from '../redux/books/bookSlice';
 
 export default function BookCard({
+  id,
   category,
   bookTitle,
   bookAuthor,
@@ -9,12 +12,15 @@ export default function BookCard({
   currentChapter,
 }) {
   BookCard.propTypes = {
+    id: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
     bookTitle: PropTypes.string.isRequired,
     bookAuthor: PropTypes.string.isRequired,
-    progress: PropTypes.oneOf([PropTypes.string, PropTypes.number]).isRequired,
+    progress: PropTypes.string.isRequired,
     currentChapter: PropTypes.string.isRequired,
   };
+
+  const dispatch = useDispatch();
 
   return (
     <article className="book-card">
@@ -24,7 +30,7 @@ export default function BookCard({
         <span className="author">{bookAuthor}</span>
         <div className="actions">
           <button type="button" className="action-buttons">Comments</button>
-          <button type="button" className="action-buttons">Remove</button>
+          <button type="button" className="action-buttons" onClick={() => dispatch(removeBook(id))}>Remove</button>
           <button type="button" className="action-buttons">Edit</button>
         </div>
       </div>
