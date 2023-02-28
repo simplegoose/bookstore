@@ -79,8 +79,11 @@
         height: 4.25rem;
         width: 4.25rem;
         border: 3px solid $blue;
+        border-top: 3px solid $pinkish-grey;
+        transform: rotate(-45deg);
 
         .big-square {
+          display: none;
           width: 4.25rem;
           height: 4.25rem;
           position: absolute;
