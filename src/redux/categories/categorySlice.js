@@ -16,4 +16,5 @@ const categoryReducer = categorySlice.reducer;
 
 const { checkStatus } = categorySlice.actions;
 
-export { categoryReducer, checkStatus };
+export { checkStatus };
+export default categoryReducer;
