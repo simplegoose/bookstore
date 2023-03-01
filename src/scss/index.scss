@@ -19,7 +19,12 @@ main.category-main {
 
 main.category-main {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+}
+
+.category-main div {
+  font-family: 'Roboto Slab', sans-serif;
 }
 
 .books-wrapper {
@@ -36,4 +41,8 @@ main.category-main {
   border-radius: 4px;
   color: $white;
   font-family: 'Roboto Slab', sans-serif;
+}
+
+.text-center {
+  text-align: center;
 }
