@@ -1,15 +1,24 @@
+import { useEffect } from 'react';
 import {
   BrowserRouter as Router,
   Navigate,
   Route,
   Routes,
 } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import Layout from './components/Layout';
 import Books from './routes/Books';
 import Category from './routes/Category';
 import './scss/index.scss';
+import { getBooks } from './redux/books/bookSlice';
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getBooks());
+  }, [dispatch]);
+
   return (
     <div className="App">
       <Router>
