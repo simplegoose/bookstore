@@ -1,0 +1,136 @@
+@import 'colors';
+@import 'mixins/flex';
+
+.book-card {
+  background-color: $white;
+  border-radius: 4px;
+  border: 1px solid $pinkish-grey;
+  width: 100%;
+
+  @include flex(row, 10vw, center);
+
+  padding: 2rem 1.6rem;
+  margin-bottom: 1rem;
+
+  .text {
+    @include flex(column, 0.3rem);
+
+    font-family: 'Roboto Slab', sans-serif;
+    max-width: 300px;
+    min-width: 300px;
+
+    .category {
+      font-family: 'Montserrat', sans-serif;
+      color: $very-light-pink;
+      font-weight: bold;
+    }
+
+    .title {
+      margin-top: 0.3rem;
+    }
+
+    .author {
+      font-size: 0.9rem;
+      color: $blue;
+      font-weight: 200;
+    }
+
+    .actions {
+      @include flex();
+
+      margin-top: 1rem;
+
+      .action-buttons {
+        font-family: 'Roboto Slab', sans-serif;
+        border: none;
+        padding: 0.3rem 1rem;
+        border-left: 1px solid $light;
+        border-right: 1px solid $light;
+        background-color: $white;
+        font-size: 0.9rem;
+        color: $blue;
+        font-weight: 200;
+      }
+
+      .action-buttons:first-child {
+        padding-left: 0;
+        border-left: 0;
+      }
+
+      .action-buttons:last-child {
+        padding-right: 0;
+        border-right: 0;
+      }
+    }
+  }
+
+  .progress-chapter {
+    @include flex(row, 0, center);
+
+    .progress {
+      padding: 0 4rem;
+      border-right: 1px solid $light;
+
+      @include flex(row, 1rem, center);
+
+      .progress-circle {
+        position: relative;
+        border-radius: 50%;
+        height: 4.25rem;
+        width: 4.25rem;
+        border: 3px solid $blue;
+        border-top: 3px solid $pinkish-grey;
+        transform: rotate(-45deg);
+
+        .big-square {
+          display: none;
+          width: 4.25rem;
+          height: 4.25rem;
+          position: absolute;
+          top: -50%;
+          left: -50%;
+          background-color: $white;
+        }
+      }
+
+      .progress-text {
+        @include flex(column, 0.5rem);
+
+        font-family: 'Montserrat', sans-serif;
+
+        .progress-percent {
+          font-size: 2rem;
+        }
+
+        .progress-completed {
+          font-size: 0.9rem;
+          color: $pinkish-grey;
+        }
+      }
+    }
+
+    .chapter {
+      @include flex(column, 0.3rem);
+
+      font-family: 'Roboto Slab', sans-serif;
+      padding: 0 3rem;
+      font-weight: 200;
+      font-size: 0.9rem;
+
+      .cur-chapter {
+        color: $very-light-pink;
+      }
+
+      .update-progress {
+        font-weight: 200;
+        padding: 0.5rem 1.5rem;
+        margin-top: 1rem;
+        border: none;
+        background-color: $blue;
+        border-radius: 4px;
+        color: $white;
+        font-family: 'Roboto Slab', sans-serif;
+      }
+    }
+  }
+}
